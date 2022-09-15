@@ -1,8 +1,8 @@
 import Link from 'next/link';
 
-export default function AboutPage({ time }) {
+export default function AboutPage({ time, key }) {
   return (
-    <div>
+    <div key={key}>
       <h1>About us</h1>
       <p>Props: {time}</p>
       <div>
@@ -20,6 +20,7 @@ export async function getStaticProps() {
   return {
     props: {
       time,
+      key: time,
     },
     revalidate: 2,
   };
